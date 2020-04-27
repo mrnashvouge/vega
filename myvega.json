@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json","width": 1000,
+  "height":500,
+  "data": {"url": "https://raw.githubusercontent.com/Maplub/advmap/master/inf_waste.csv"},"title": "ข้อมูลขยะมูลฝอยประจำปี 2561 ",
+  "selection": {
+    "pts": {
+      "type": "single"
+    }
+  },
+  "mark": "bar", 
+  "encoding": {
+    "x": {"aggregate": "sum", "field": "wasteamt", "type": "quantitative","title": "ปริมาณขยะมูลฝอย ( ตัน ) "},
+    "y": {"field": "dname", "type": "ordinal","title":"เขต"},
+    "color": {"timeUnit":"yearmonth","field": "month", "type": "nominal"},"tooltip": [
+                {"field": "wasteamt", "type": "quantitative"},{"timeUnit":"yearmonth","field": "month", "type": "ordinal"}]
+  }
+}
